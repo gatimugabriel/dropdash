@@ -1,29 +1,43 @@
-# App Blueprint
+# Project Blueprint
 
 ## Overview
 
-A delivery app Blueprint is a blueprint for a food delivery application built with Flutter.
+This document outlines the structure, features, and development plan for the Flutter application. The app uses Supabase for authentication and `go_router` for navigation.
 
 ## Features
 
-### Current Features:
+- **Onboarding:** A three-page onboarding flow to introduce users to the app.
+- **Authentication:** User authentication (login and sign-up) using Supabase.
+- **Navigation:** Routing handled by `go_router` with authentication-based redirects.
+- **Profile Screen:** Displays user information (email) and allows password updates and logout.
+- **Settings Screen:** Allows users to toggle between light, dark, and system theme.
+- **Bottom Navigation:** A bottom navigation bar for easy access to the main screens.
+- **Home Screen:** Displays a list of items from a Supabase table and allows adding new items.
 
-*   **App Icon:** Placeholder app icon.
+## Project Structure
 
-### Planned Features:
+```
+lib/
+├── providers/
+│   └── theme_provider.dart
+├── screens/
+│   ├── onboarding_screen.dart
+│   ├── login_screen.dart
+│   ├── signup_screen.dart
+│   ├── home_screen.dart
+│   ├── profile_screen.dart
+│   └── settings_screen.dart
+├── utils/
+│   └── router.dart
+├── widgets/
+│   ├── add_item_dialog.dart
+│   ├── bottom_nav_bar.dart
+│   └── update_password_dialog.dart
+├── main.dart
+└── supabase_options.dart
+```
 
-*   **Splash Screen:** A screen that shows when the app is first launched.
-*   **Onboarding Screens:** A set of screens to introduce the user to the app.
-*   **User Authentication:** Allow users to sign up and log in.
-*   **Location Permission Handling:** Request and handle location permissions.
-*   **Map View (Google Maps):** Display a map with the user's location.
-*   **Pickup & Dropoff Selection:** Allow users to select pickup and dropoff locations.
-*   **Driver Location Tracking:** Track the driver's location in real-time.
-*   **Order Status Updates:** Show the status of the user's ride request.
+## Current Plan
 
-## Current Step: App Icon, Splash Screen, and Onboarding
-
-*   [x] Create a `blueprint.md` file.
-*   [ ] Change the app icon.
-*   [ ] Create a splash screen.
-*   [ ] Create onboarding screens.
+- The application is now feature-complete based on the initial requirements.
+- Future work could include adding more features, such as editing and deleting items, and improving the UI/UX.
