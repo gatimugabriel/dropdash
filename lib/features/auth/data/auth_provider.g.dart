@@ -15,15 +15,15 @@ final authProvider = AuthNotifierProvider._();
 final class AuthNotifierProvider
     extends $NotifierProvider<AuthNotifier, Session?> {
   AuthNotifierProvider._()
-      : super(
-          from: null,
-          argument: null,
-          retry: null,
-          name: r'authProvider',
-          isAutoDispose: true,
-          dependencies: null,
-          $allTransitiveDependencies: null,
-        );
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'authProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
 
   @override
   String debugGetCreateSourceHash() => _$authNotifierHash();
@@ -41,7 +41,7 @@ final class AuthNotifierProvider
   }
 }
 
-String _$authNotifierHash() => r'6865b30f50c8654d7bea77d1495012a0fbe94873';
+String _$authNotifierHash() => r'8191516e2de2194d1c3b1a469042612dac70c21f';
 
 abstract class _$AuthNotifier extends $Notifier<Session?> {
   Session? build();
@@ -49,8 +49,14 @@ abstract class _$AuthNotifier extends $Notifier<Session?> {
   @override
   void runBuild() {
     final ref = this.ref as $Ref<Session?, Session?>;
-    final element = ref.element as $ClassProviderElement<
-        AnyNotifier<Session?, Session?>, Session?, Object?, Object?>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<Session?, Session?>,
+              Session?,
+              Object?,
+              Object?
+            >;
     element.handleCreate(ref, build);
   }
 }

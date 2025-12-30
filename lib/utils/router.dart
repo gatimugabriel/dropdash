@@ -3,12 +3,13 @@ import 'package:go_router/go_router.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 import '../core/widgets/bottom_nav_bar.dart';
+import '../features/auth/presentation/forgot_password_screen.dart';
 import '../features/auth/presentation/login_screen.dart';
 import '../features/auth/presentation/onboarding_screen.dart';
+import '../features/auth/presentation/reset_password_screen.dart';
 import '../features/auth/presentation/signup_screen.dart';
 import '../features/home/home_screen.dart';
-import '../features/profile/settings_screen.dart'; 
-
+import '../features/profile/settings_screen.dart';
 
 final supabase = Supabase.instance.client;
 
@@ -18,13 +19,15 @@ final router = GoRouter(
       path: '/onboarding',
       builder: (context, state) => const OnboardingScreen(),
     ),
+    GoRoute(path: '/login', builder: (context, state) => const LoginScreen()),
+    GoRoute(path: '/signup', builder: (context, state) => const SignUpScreen()),
     GoRoute(
-      path: '/login',
-      builder: (context, state) => const LoginScreen(),
+      path: '/forgot-password',
+      builder: (context, state) => const ForgotPasswordScreen(),
     ),
     GoRoute(
-      path: '/signup',
-      builder: (context, state) => const SignUpScreen(),
+      path: '/reset-password',
+      builder: (context, state) => const ResetPasswordScreen(),
     ),
     ShellRoute(
       builder: (context, state, child) {
@@ -36,10 +39,7 @@ final router = GoRouter(
         );
       },
       routes: [
-        GoRoute(
-          path: '/',
-          builder: (context, state) => const HomeScreen(),
-        ),
+        GoRoute(path: '/', builder: (context, state) => const HomeScreen()),
         // GoRoute(
         //   path: '/profile',
         //   builder: (context, state) => const ProfileScreen(),
@@ -53,8 +53,14 @@ final router = GoRouter(
   ],
   redirect: (context, state) {
     final session = supabase.auth.currentSession;
-    final onAuthScreens =
-        state.matchedLocation == '/login' || state.matchedLocation == '/signup' || state.matchedLocation == '/onboarding';
+    final authPaths = [
+      '/login',
+      '/signup',
+      '/onboarding',
+      '/forgot-password',
+      '/reset-password',
+    ];
+    final onAuthScreens = authPaths.contains(state.matchedLocation);
 
     if (session == null && !onAuthScreens) {
       return '/onboarding';
