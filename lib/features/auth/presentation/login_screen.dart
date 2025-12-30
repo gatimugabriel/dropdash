@@ -100,7 +100,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             const AuthHeader(
               title: 'Welcome Back',
               subtitle: 'Sign in to continue your delivery journey',
-              height: 220,
+              height: 300,
             ),
 
             // Form Section

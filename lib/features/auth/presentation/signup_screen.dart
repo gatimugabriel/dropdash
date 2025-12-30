@@ -111,7 +111,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
             const AuthHeader(
               title: 'Create Account',
               subtitle: 'Join us and get your deliveries faster',
-              height: 200,
+              height: 220,
             ),
 
             // Form Section
