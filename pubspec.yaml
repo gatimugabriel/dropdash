@@ -151,7 +151,7 @@ flutter_native_splash:
   # remain optional. NOTE that if you specify the [required] color, then you cant 
   # use the [required] background_image in the next section. the reverse is true.
   # select one, they cant work together.
-  color: "#673AB7"  ##====================================[REQUIRED]==========
+  color: "#fafafa"  ##====================================[REQUIRED]==========
   #color_dark: "#042a49"
   # platform-specific color. will override general color if active:
   #color_android: "#42a5f5"
@@ -247,7 +247,7 @@ flutter_native_splash:
   #! ANDROID 12+ configuration:
   android_12:
     # background color
-    color: "#673AB7"
+    color: "#fafafa"
     # color_dark: "#042a49"
 
     # center-logo

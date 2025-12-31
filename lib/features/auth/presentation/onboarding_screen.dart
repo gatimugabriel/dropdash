@@ -123,7 +123,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         backgroundColor: colorScheme.primary,
                         foregroundColor: colorScheme.onPrimary,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
+                          borderRadius: BorderRadius.circular(32),
                         ),
                       ),
                       child: Text(

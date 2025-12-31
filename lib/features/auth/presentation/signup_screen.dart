@@ -313,7 +313,7 @@ class _SignUpScreenState extends ConsumerState<SignUpScreen> {
                           backgroundColor: colorScheme.primary,
                           foregroundColor: colorScheme.onPrimary,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(32),
                           ),
                         ),
                         child: _isLoading

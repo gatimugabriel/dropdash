@@ -99,7 +99,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
             // Header
             const AuthHeader(
               title: 'Welcome Back',
-              subtitle: 'Sign in to continue your delivery journey',
+              subtitle: 'Sign in to continue ordering your best items!',
               height: 300,
             ),
 
@@ -192,7 +192,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                           backgroundColor: colorScheme.primary,
                           foregroundColor: colorScheme.onPrimary,
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
+                            borderRadius: BorderRadius.circular(32),
                           ),
                         ),
                         child: _isLoading
@@ -220,7 +220,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                       children: [
                         Expanded(
                           child: Divider(
-                            color: colorScheme.outline.withValues(alpha: 0.3),
+                            color: colorScheme.primary.withValues(alpha: 0.9),
                           ),
                         ),
                         Padding(
@@ -235,7 +235,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
                         ),
                         Expanded(
                           child: Divider(
-                            color: colorScheme.outline.withValues(alpha: 0.3),
+                            color: colorScheme.primary.withValues(alpha: 0.9),
                           ),
                         ),
                       ],
