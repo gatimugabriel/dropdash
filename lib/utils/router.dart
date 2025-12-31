@@ -8,7 +8,10 @@ import '../features/auth/presentation/login_screen.dart';
 import '../features/auth/presentation/onboarding_screen.dart';
 import '../features/auth/presentation/reset_password_screen.dart';
 import '../features/auth/presentation/signup_screen.dart';
+import '../features/cart/presentation/cart_screen.dart';
 import '../features/home/home_screen.dart';
+import '../features/orders/presentation/checkout_screen.dart';
+import '../features/products/presentation/product_detail_screen.dart';
 import '../features/profile/settings_screen.dart';
 
 final supabase = Supabase.instance.client;
@@ -28,6 +31,21 @@ final router = GoRouter(
     GoRoute(
       path: '/reset-password',
       builder: (context, state) => const ResetPasswordScreen(),
+    ),
+    // Product detail screen (outside shell route for full screen)
+    GoRoute(
+      path: '/product/:id',
+      builder: (context, state) {
+        final productId = state.pathParameters['id']!;
+        return ProductDetailScreen(productId: productId);
+      },
+    ),
+    // Cart screen (outside shell route for full screen)
+    GoRoute(path: '/cart', builder: (context, state) => const CartScreen()),
+    // Checkout screen (outside shell route for full screen)
+    GoRoute(
+      path: '/checkout',
+      builder: (context, state) => const CheckoutScreen(),
     ),
     ShellRoute(
       builder: (context, state, child) {
@@ -76,7 +94,7 @@ final router = GoRouter(
 
 int _calculateSelectedIndex(BuildContext context) {
   final String location = GoRouterState.of(context).matchedLocation;
-  if (location.startsWith('/')) {
+  if (location == '/') {
     return 0;
   }
   if (location.startsWith('/profile')) {
